@@ -1,4 +1,4 @@
-import { Viewer } from '@photo-sphere-viewer/core';
+import { Viewer, PanoData } from '@photo-sphere-viewer/core';
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
 import { VirtualTourPlugin } from '@photo-sphere-viewer/virtual-tour-plugin';
 import { GalleryPlugin } from '@photo-sphere-viewer/gallery-plugin';
@@ -14,13 +14,14 @@ const viewer = new Viewer({
     mousewheelCtrlKey: true,
     defaultYaw: '130deg',
     navbar: 'zoom move gallery caption fullscreen',
+    defaultZoomLvl: 1,
     plugins: [
         MarkersPlugin,
         [GalleryPlugin, {
             thumbnailSize: { width: 100, height: 100 },
         }],
         [VirtualTourPlugin, {
-            positionMode: 'gps',
+            positionMode: 'manual',
             renderMode: '3d',
         }],
         LensflarePlugin
@@ -33,40 +34,51 @@ const lensflare = viewer.getPlugin(LensflarePlugin) as LensflarePlugin;
 virtualTour.addEventListener('node-changed', ({ node }) => {
     console.log(`Current node is ${node.id}`);
     switch (node.id) {
-        case '1':
+        case 'torre_est':
             lensflare.setLensflares([
                 {
                     id: 'sun',
-                    position: { yaw: '145deg', pitch: '2deg' },
+                    position: { yaw: '340deg', pitch: '18deg' },
                     type: 0,
                 }
             ]);
             break;
-        case '2':
+        case 'area_training':
             lensflare.setLensflares([
                 {
-                    id: 'sun',
-                    position: { yaw: '145deg', pitch: '2deg' },
+                    id: 'sun1',
+                    position: { yaw: '200deg', pitch: '22deg' },
+                    type: 0,
+                }
+            ]);
+            break;
+        case 'interno_1':
+            lensflare.setLensflares([
+                {
+                    id: 'light1',
+                    position: { yaw: '82deg', pitch: '55deg' },
                     type: 0,
                 },
                 {
-                    id: 'moon',
-                    position: { yaw: '30.6deg', pitch: '41.2deg' },
-                    color: { h: 0.6, s: 0.5, l: 0.2 },
+                    id: 'light2',
+                    position: { yaw: '130deg', pitch: '50deg' },
+                    type: 0,
                 }
             ]);
             break;
-        case '3':
-            lensflare.setLensflares([]);
-            break;
-        case '4':
-            lensflare.setLensflares([]);
-            break;
-        case '5':
-            lensflare.setLensflares([]);
-            break;
-        case '6':
-            lensflare.setLensflares([]);
+        case 'interno_2':
+            lensflare.setLensflares([
+                {
+                    id: 'light1',
+                    position: { yaw: '235deg', pitch: '40deg' },
+                    type: 0,
+                },
+                {
+                    id: 'light2',
+                    position: { yaw: '305deg', pitch: '44deg' },
+                    type: 0,
+                }
+            ]);
             break;
         default:
             lensflare.setLensflares([]);
@@ -76,76 +88,69 @@ virtualTour.addEventListener('node-changed', ({ node }) => {
 
 virtualTour.setNodes([
     {
-        id: '1',
+        id: 'torre_est',
         panorama: 'images/torre_est.JPG',
         thumbnail: 'images/torre_est.JPG',
         name: 'Torre (est)',
         links: [
-            { nodeId: '2' }
+            { nodeId: 'torre_ovest', position: { textureX: 6000, textureY: 5000 } },
+            { nodeId: 'interno_2', position: { textureX: 1500, textureY: 5000 } },
         ],
-        gps: [44.50396161405211, 11.404367415507782],
-        panoData: { poseHeading: 100 } as any,
+        panoData: { poseHeading: 220 } as PanoData,
     },
     {
-        id: '2',
+        id: 'torre_ovest',
         panorama: 'images/torre_ovest.JPG',
         thumbnail: 'images/torre_ovest.JPG',
-        name: 'Torre Ovest',
+        name: 'Torre (ovest)',
         links: [
-            { nodeId: '6' },
-            { nodeId: '4' },
-            { nodeId: '1' }
+            { nodeId: 'torre_est', position: { textureX: 9000, textureY: 5000 } },
+            { nodeId: 'area_training', position: { textureX: 15500, textureY: 5000 } },
         ],
-        gps: [44.50409864245173, 11.404218029872105],
-        panoData: { poseHeading: 170 },
+        panoData: { poseHeading: 210 } as PanoData,
     },
     {
-        id: '3',
+        id: 'interno_1',
         panorama: 'images/interno_1.JPG',
         thumbnail: 'images/interno_1.JPG',
         name: 'Palestra Interna (1)',
         links: [
-            { nodeId: '4' },
-            { nodeId: '5' }
+            { nodeId: 'interno_2', position: { textureX: 3000, textureY: 5000 } },
         ],
-        gps: [44.503875718274784, 11.404077473221383],
-        panoData: { poseHeading: 328 },
+        panoData: { poseHeading: 320 } as PanoData,
     },
     {
-        id: '4',
+        id: 'interno_2',
         panorama: 'images/interno_2.JPG',
         thumbnail: 'images/interno_2.JPG',
         name: 'Palestra Interna (2)',
         links: [
-            { nodeId: '3' },
-            { nodeId: '5' },
-            { nodeId: '2' }
+            { nodeId: 'interno_1', position: { textureX: 9500, textureY: 5000 } },
+            { nodeId: 'interno_3', position: { textureX: 14000, textureY: 5000 } },
+            { nodeId: 'torre_est', position: { textureX: 0, textureY: 5000 } },
         ],
-        gps: [44.50393116931159, 11.404115299016564],
-        panoData: { poseHeading: 78 },
+        panoData: { poseHeading: 200 } as PanoData,
     },
     {
-        id: '5',
+        id: 'interno_3',
         panorama: 'images/interno_3.JPG',
         thumbnail: 'images/interno_3.JPG',
         name: 'Palestra Interna (3)',
         links: [
-            { nodeId: '6' },
-            { nodeId: '4' }
+            { nodeId: 'area_training', position: { textureX: 12000, textureY: 5000 } },
+            { nodeId: 'interno_2', position: { textureX: 18000, textureY: 5000 } }
         ],
-        gps: [44.503963443732424, 11.403965357751147],
-        panoData: { poseHeading: 190 },
+        panoData: { poseHeading: 190 } as PanoData,
     },
     {
-        id: '6',
+        id: 'area_training',
         panorama: 'images/area_training.JPG',
         thumbnail: 'images/area_training.JPG',
         name: 'Area Training',
         links: [
-            { nodeId: '5' },
-            { nodeId: '2' }
+            { nodeId: 'torre_ovest', position: { textureX: 10500, textureY: 5000 } },
+            { nodeId: 'interno_3', position: { textureX: 3000, textureY: 5000 } },
         ],
-        gps: [44.5040143176, 11.403956445523963],
-        panoData: { poseHeading: 328 },
+        panoData: { poseHeading: 200 } as PanoData,
     },
-], '2');
+], 'interno_2');
