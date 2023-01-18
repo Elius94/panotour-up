@@ -121,7 +121,7 @@ virtualTour.setNodes([
     {
         id: 'torre_est',
         panorama: 'images/torre_est.JPG',
-        thumbnail: 'images/thumbnails/torre_est.JPG',
+        thumbnail: 'images/thumbnails/torre_est.jpg',
         name: 'Torre (est)',
         links: [
             { nodeId: 'torre_ovest', position: { textureX: 6000, textureY: 5000 } },
@@ -132,7 +132,7 @@ virtualTour.setNodes([
     {
         id: 'torre_ovest',
         panorama: 'images/torre_ovest.JPG',
-        thumbnail: 'images/thumbnails/torre_ovest.JPG',
+        thumbnail: 'images/thumbnails/torre_ovest.jpg',
         name: 'Torre (ovest)',
         links: [
             { nodeId: 'torre_est', position: { textureX: 9000, textureY: 5000 } },
@@ -143,7 +143,7 @@ virtualTour.setNodes([
     {
         id: 'interno_1',
         panorama: 'images/interno_1.JPG',
-        thumbnail: 'images/thumbnails/interno_1.JPG',
+        thumbnail: 'images/thumbnails/interno_1.jpg',
         name: 'Palestra Interna (1)',
         links: [
             { nodeId: 'interno_2', position: { textureX: 3000, textureY: 5000 } },
@@ -153,7 +153,7 @@ virtualTour.setNodes([
     {
         id: 'interno_2',
         panorama: 'images/interno_2.JPG',
-        thumbnail: 'images/thumbnails/interno_2.JPG',
+        thumbnail: 'images/thumbnails/interno_2.jpg',
         name: 'Palestra Interna (2)',
         links: [
             { nodeId: 'interno_1', position: { textureX: 9500, textureY: 5000 } },
@@ -165,7 +165,7 @@ virtualTour.setNodes([
     {
         id: 'interno_3',
         panorama: 'images/interno_3.JPG',
-        thumbnail: 'images/thumbnails/interno_3.JPG',
+        thumbnail: 'images/thumbnails/interno_3.jpg',
         name: 'Palestra Interna (3)',
         links: [
             { nodeId: 'area_training', position: { textureX: 12000, textureY: 5000 } },
@@ -176,7 +176,7 @@ virtualTour.setNodes([
     {
         id: 'area_training',
         panorama: 'images/area_training.JPG',
-        thumbnail: 'images/thumbnails/area_training.JPG',
+        thumbnail: 'images/thumbnails/area_training.jpg',
         name: 'Area Training',
         links: [
             { nodeId: 'torre_ovest', position: { textureX: 10500, textureY: 5000 } },
