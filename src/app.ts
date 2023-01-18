@@ -3,6 +3,9 @@ import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
 import { VirtualTourPlugin } from '@photo-sphere-viewer/virtual-tour-plugin';
 import { GalleryPlugin } from '@photo-sphere-viewer/gallery-plugin';
 import { LensflarePlugin } from 'photo-sphere-viewer-lensflare-plugin';
+import { GyroscopePlugin } from '@photo-sphere-viewer/gyroscope-plugin';
+import { AutorotatePlugin } from '@photo-sphere-viewer/autorotate-plugin';
+import { StereoPlugin } from '@photo-sphere-viewer/stereo-plugin';
 import '@photo-sphere-viewer/core/index.css';
 import '@photo-sphere-viewer/markers-plugin/index.css';
 import '@photo-sphere-viewer/gallery-plugin/index.css';
@@ -10,10 +13,10 @@ import '@photo-sphere-viewer/gallery-plugin/index.css';
 const viewer = new Viewer({
     container: document.querySelector('#viewer') as HTMLElement,
     caption: 'Up Urban Climbing <b>&copy; 2023</b>',
-    touchmoveTwoFingers: true,
+    touchmoveTwoFingers: false,
     mousewheelCtrlKey: true,
     defaultYaw: '130deg',
-    navbar: 'zoom move gallery caption fullscreen',
+    navbar: 'autorotate zoom move gallery caption gyroscope stereo fullscreen',
     defaultZoomLvl: 1,
     plugins: [
         MarkersPlugin,
@@ -23,6 +26,17 @@ const viewer = new Viewer({
         [VirtualTourPlugin, {
             positionMode: 'manual',
             renderMode: '3d',
+            preload: true,
+        }],
+        [GyroscopePlugin, {
+            lang: {
+                gyroscope: 'Giroscopio',
+            }
+        }],
+        StereoPlugin,
+        [AutorotatePlugin, {
+            autorotatePitch: '5deg',
+            autostartOnIdle: false
         }],
         LensflarePlugin
     ]
@@ -54,13 +68,13 @@ virtualTour.addEventListener('node-changed', ({ node }) => {
                     id: 'light1',
                     position: { yaw: '100deg', pitch: '65deg' },
                     type: 0,
-                    color: {h:0, s: 0.4, l: 0.2}
+                    color: { h: 0, s: 0.4, l: 0.2 }
                 },
                 {
                     id: 'light2',
                     position: { yaw: '340deg', pitch: '68deg' },
                     type: 0,
-                    color: {h:0, s: 0.4, l: 0.2}
+                    color: { h: 0, s: 0.4, l: 0.2 }
                 }
             ]);
             break;
@@ -87,7 +101,7 @@ virtualTour.addEventListener('node-changed', ({ node }) => {
                 },
                 {
                     id: 'light2',
-                    position: { yaw: '305deg', pitch: '44deg' },
+                    position: { yaw: '305deg', pitch: '40deg' },
                     type: 0,
                 }
             ]);
