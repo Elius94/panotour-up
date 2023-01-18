@@ -1,6 +1,6 @@
 {
   "name": "panotour-up",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple Panorama Viewer",
   "main": "public/dist/index.js",
   "types": "public/dist/index.d.ts",
