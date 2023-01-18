@@ -1,18 +1,18 @@
 {
   "name": "panotour-up",
-  "version": "2.6.0",
+  "version": "1.0.0",
   "description": "Simple Panorama Viewer",
   "main": "public/dist/index.js",
   "types": "public/dist/index.d.ts",
   "type": "module",
   "files": [
-    "public/dist/"
+    "public/"
   ],
   "scripts": {
     "lint": "eslint ./src/ --ext .ts",
-    "build": "node ./esbuild.js",
+    "build": "node ./esbuild.js && npx seo-injector --build-dir public --pretty true --verbose true",
     "prepare": "npm run build",
-    "start": "npx concurrently \"node ./esbuild.js --watch --dev\" \"npx serve -s public/\""
+    "start": "npx concurrently \"node ./esbuild.js --watch --dev\" \"start http://localhost:8080\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "esbuild": "^0.17.2",
     "eslint": "^8.32.0",
+    "figlet": "^1.5.2",
     "typescript-eslint": "^0.0.1-alpha.0",
     "webpack-cli": "^5.0.1"
   },

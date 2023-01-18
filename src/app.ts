@@ -77,8 +77,8 @@ virtualTour.addEventListener('node-changed', ({ node }) => {
 virtualTour.setNodes([
     {
         id: '1',
-        panorama: 'torre_est.JPG',
-        thumbnail: 'torre_est.JPG',
+        panorama: 'images/torre_est.JPG',
+        thumbnail: 'images/torre_est.JPG',
         name: 'Torre (est)',
         links: [
             { nodeId: '2' }
@@ -88,8 +88,8 @@ virtualTour.setNodes([
     },
     {
         id: '2',
-        panorama: 'torre_ovest.JPG',
-        thumbnail: 'torre_ovest.JPG',
+        panorama: 'images/torre_ovest.JPG',
+        thumbnail: 'images/torre_ovest.JPG',
         name: 'Torre Ovest',
         links: [
             { nodeId: '6' },
@@ -101,8 +101,8 @@ virtualTour.setNodes([
     },
     {
         id: '3',
-        panorama: 'interno_1.JPG',
-        thumbnail: 'interno_1.JPG',
+        panorama: 'images/interno_1.JPG',
+        thumbnail: 'images/interno_1.JPG',
         name: 'Palestra Interna (1)',
         links: [
             { nodeId: '4' },
@@ -113,8 +113,8 @@ virtualTour.setNodes([
     },
     {
         id: '4',
-        panorama: 'interno_2.JPG',
-        thumbnail: 'interno_2.JPG',
+        panorama: 'images/interno_2.JPG',
+        thumbnail: 'images/interno_2.JPG',
         name: 'Palestra Interna (2)',
         links: [
             { nodeId: '3' },
@@ -126,8 +126,8 @@ virtualTour.setNodes([
     },
     {
         id: '5',
-        panorama: 'interno_3.JPG',
-        thumbnail: 'interno_3.JPG',
+        panorama: 'images/interno_3.JPG',
+        thumbnail: 'images/interno_3.JPG',
         name: 'Palestra Interna (3)',
         links: [
             { nodeId: '6' },
@@ -138,8 +138,8 @@ virtualTour.setNodes([
     },
     {
         id: '6',
-        panorama: 'area_training.JPG',
-        thumbnail: 'area_training.JPG',
+        panorama: 'images/area_training.JPG',
+        thumbnail: 'images/area_training.JPG',
         name: 'Area Training',
         links: [
             { nodeId: '5' },

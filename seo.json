@@ -1,0 +1,35 @@
+{
+    "title": "Up Urban Climbing Virtual Tour",
+    "description": "Up Urban Climbing, palestra di arrampicata a Bologna",
+    "keywords": "virtualtour, virtual, tour, vr, 360, photosphere, streetview",
+    "author": "Elia Lazzari",
+    "openGraph": {
+        "url": "https://upurbanclimbing.it",
+        "title": "Up Urban Climbing Virtual Tour",
+        "description": "Up Urban Climbing, palestra di arrampicata a Bologna",
+        "image": "https://example.com/image.jpg",
+        "site_name": "Up Urban Climbing",
+        "type": "website",
+        "locale": "it_IT"
+    },
+    "twitter": {
+        "image": "https://example.com/image.jpg",
+        "url": "https://upurbanclimbing.it",
+        "card": "summary_large_image",
+        "title": "Up Urban Climbing Virtual Tour",
+        "description": "Up Urban Climbing, palestra di arrampicata a Bologna"
+    },
+    "favicon": null,
+    "manifest": null,
+    "icons": [{
+            "src": "https://upurbanclimbing.it/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://upurbanclimbing.it/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
