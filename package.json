@@ -12,13 +12,14 @@
     "lint": "eslint ./src/ --ext .ts",
     "build": "node ./esbuild.js && npx seo-injector --build-dir public --pretty true --verbose true",
     "prepare": "npm run build",
-    "start": "npx concurrently \"node ./esbuild.js --watch --dev\" \"start http://localhost:8080\""
+    "start": "node ./esbuild.js --watch --dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Elius94/panotour-up.git"
   },
   "devDependencies": {
+    "compress-images": "^2.0.5",
     "esbuild": "^0.17.2",
     "eslint": "^8.32.0",
     "figlet": "^1.5.2",
