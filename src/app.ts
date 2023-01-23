@@ -16,6 +16,7 @@ const viewer = new Viewer({
     touchmoveTwoFingers: false,
     mousewheelCtrlKey: true,
     defaultYaw: '130deg',
+    minFov: 50,
     navbar: 'autorotate zoom move gallery caption gyroscope stereo fullscreen',
     defaultZoomLvl: 1,
     plugins: [
@@ -193,8 +194,54 @@ virtualTour.setNodes([
         thumbnail: 'images/thumbnails/area_training.jpg',
         name: 'Area Training',
         links: [
-            { nodeId: 'torre_ovest', position: { textureX: 10500, textureY: 5000 } },
+            { nodeId: 'torre_ovest', position: { textureX: 12500, textureY: 5000 } },
             { nodeId: 'interno_3', position: { textureX: 3000, textureY: 5000 } },
+            { nodeId: 'nuova_ala_1', position: { textureX: 9000, textureY: 5000 } },
+        ],
+        panoData: { poseHeading: 200 } as PanoData,
+    },
+    {
+        id: 'nuova_ala_1',
+        panorama: 'images/nuova_ala_1.JPG',
+        thumbnail: 'images/thumbnails/nuova_ala_1.jpg',
+        name: 'Nuova Ala (1)',
+        links: [
+            { nodeId: 'area_training', position: { textureX: 1000, textureY: 5000 } },
+            { nodeId: 'nuova_ala_2', position: { textureX: 8000, textureY: 5000 } },
+            { nodeId: 'nuova_ala_4', position: { textureX: 14000, textureY: 5000 } },
+        ],
+        panoData: { poseHeading: 200 } as PanoData,
+    },
+    {
+        id: 'nuova_ala_2',
+        panorama: 'images/nuova_ala_2.JPG',
+        thumbnail: 'images/thumbnails/nuova_ala_2.jpg',
+        name: 'Nuova Ala (2)',
+        links: [
+            { nodeId: 'nuova_ala_1', position: { textureX: 13000, textureY: 5000 } },
+            { nodeId: 'nuova_ala_3', position: { textureX: 8000, textureY: 5000 } },
+        ],
+        panoData: { poseHeading: 200 } as PanoData,
+    },
+    {
+        id: 'nuova_ala_3',
+        panorama: 'images/nuova_ala_3.JPG',
+        thumbnail: 'images/thumbnails/nuova_ala_3.jpg',
+        name: 'Nuova Ala (3)',
+        links: [
+            { nodeId: 'nuova_ala_2', position: { textureX: 11000, textureY: 5000 } },
+            { nodeId: 'nuova_ala_4', position: { textureX: 7000, textureY: 5000 } },
+        ],
+        panoData: { poseHeading: 200 } as PanoData,
+    },
+    {
+        id: 'nuova_ala_4',
+        panorama: 'images/nuova_ala_4.JPG',
+        thumbnail: 'images/thumbnails/nuova_ala_4.jpg',
+        name: 'Nuova Ala (4)',
+        links: [
+            { nodeId: 'nuova_ala_3', position: { textureX: 13000, textureY: 5000 } },
+            { nodeId: 'nuova_ala_1', position: { textureX: 8000, textureY: 5000 } },
         ],
         panoData: { poseHeading: 200 } as PanoData,
     },
